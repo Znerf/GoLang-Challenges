@@ -59,5 +59,16 @@ func solution(str, ending string) bool {
 }
 	
 	
+package kata
+
+import "regexp"
+
+func solution(str, ending string) bool {
+  // Your code here!
+  endsWith, _ := regexp.MatchString(ending + "$", str)
+  return endsWith
+  
+}
+	
 // Insight 
 // rune is also a datatype like char. it's ASCII representation 
