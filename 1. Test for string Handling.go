@@ -41,3 +41,23 @@ var _ = Describe("Example test:", func() {
 	})
 }) 
 */
+
+
+// Some solutions
+package kata
+
+import "strings"
+
+func solution(str, ending string) bool {
+	return strings.HasSuffix(str, ending)
+}
+	
+package kata
+
+func solution(str, ending string) bool {
+  return len(str) >= len(ending) && str[len(str) - len(ending):] == ending
+}
+	
+	
+// Insight 
+// rune is also a datatype like char. it's ASCII representation 
