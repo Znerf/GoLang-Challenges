@@ -59,3 +59,29 @@ var _ = Describe("Test Example", func() {
     })
 })
 
+
+
+func BouncingBall(h, bounce, window float64) int {
+	if h <= window || bounce <= 0 || bounce >= 1 {
+		return -1
+	} else {
+		return 2 + BouncingBall((h*bounce), bounce, window)
+	}
+}
+
+func BouncingBall(h, bounce, window float64) int {
+  failCond := h < 0 || bounce < 0 || bounce >= 1 || window >= h
+  if (failCond) { return -1 }
+  
+  // Find n such that h*bounce^n = w
+  n := math.Log(window/h) / math.Log(bounce)
+  
+  // Take into account that ball can only be seen when h*b^m > w ; m >= 1
+  if (n == math.Floor(n)) { n-- }
+  
+  return (int(math.Floor(n))*2) + 1
+}
+/*
+Learning points
+1. recursive v while loop (memory extensive and easy clear code)
+*/
